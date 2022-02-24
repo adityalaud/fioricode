@@ -1,13 +1,14 @@
+//This is a comment from VS Code
 sap.ui.define([
     'sap/ui/core/UIComponent'
-], function(UIComponent) {
+], function (UIComponent) {
     'use strict';
     //inherit from SAP stanard class UIComponent using extend keyword
-    return UIComponent.extend("nvidia.sd.sales.Component",{
+    return UIComponent.extend("nvidia.sd.sales.Component", {
         metadata: {
             manifest: "json"
         },
-        init: function(){
+        init: function () {
             //this is the constructor of Component class
             //We want to call base class constructor in this child class
             //super->constructor().
@@ -46,7 +47,7 @@ sap.ui.define([
 
         //     return oView;
         // },
-        destroy: function(){
+        destroy: function () {
             //Clean up code
         }
     });
