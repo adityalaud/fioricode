@@ -6,7 +6,7 @@
             tooltip="Go to Mukesh Ambani" press="onNext"></Button>
         </headerContent>
         <content>
-            <!-- 😉 Vs Code test -->
+            <!-- 🤞 Vs Code test -->
             <SearchField id="idSearch" search="onSearch"></SearchField>
             <!-- <List id="idList" mode="MultiSelect" itemPress="onSelectItem" delete="onDelete" -->
             <List id="idList" growing="true" growingThreshold="10" mode="SingleSelectMaster" selectionChange="onSelectItem" delete="onDelete" items="{
