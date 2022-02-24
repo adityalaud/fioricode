@@ -1,0 +1,61 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" 
+          controllerName="nvidia.sd.sales.controller.View1">
+    <Page title="Page 1">
+        <headerContent>
+            <Button icon="sap-icon://action" 
+            tooltip="Go to Mukesh Ambani" press="onNext"></Button>
+        </headerContent>
+        <content>
+            <!-- 😉 Vs Code test -->
+            <SearchField id="idSearch" search="onSearch"></SearchField>
+            <!-- <List id="idList" mode="MultiSelect" itemPress="onSelectItem" delete="onDelete" -->
+            <List id="idList" growing="true" growingThreshold="10" mode="SingleSelectMaster" selectionChange="onSelectItem" delete="onDelete" items="{
+                path : '/ProductSet'
+            }">
+                <headerToolbar>
+                    <Toolbar>
+                        <Button icon="sap-icon://delete" press="onDeleteAll"></Button>
+                    </Toolbar>
+                </headerToolbar>
+                <items>
+                    <!-- <ObjectListItem title="{name}" intro="{type}"
+                    icon="{imageURL}" number="{price}" numberUnit="{currency}" type="Navigation"> -->
+                    <ObjectListItem title="{NAME}" intro="{CATEGORY}"
+                    icon="{imageURL}" number="{PRICE}" numberUnit="{CURRENCY_CODE}">
+                        <firstStatus>
+                            <ObjectStatus text="{SUPPLIER_NAME}"></ObjectStatus>
+                        </firstStatus>
+                    </ObjectListItem>
+                    <!-- <DisplayListItem label="Apple" value="The best Antibiotic"></DisplayListItem>
+                    <StandardListItem title="Banana" description="Good source of potasium, restore lactic acid" icon="https://images.immediate.co.uk/production/volatile/sites/30/2017/01/Bananas-218094b-scaled.jpg"></StandardListItem>
+                    <InputListItem>
+                        <HBox>
+                            <Text text="What is the quality" class="sapUiSmallMarginTop"></Text>
+                            <Input width="20%"></Input>
+                        </HBox>
+                    </InputListItem>
+                    <CustomListItem>
+                        <content>
+                            <HBox>
+                                <Text text="Do you want CoD" class="sapUiSmallMarginTop sapUiLargeMarginEnd sapUiLargeMarginBeginEnd"></Text>
+                                <Switch></Switch>
+                            </HBox>
+                        </content>
+                    </CustomListItem>
+                    <ObjectListItem title="Pineapple" intro="Good for glowing skin" icon="https://post.greatist.com/wp-content/uploads/sites/2/2021/07/369366-grt-Pineapple-Benefits-732x549-thumbnail.jpg"
+                                    number="600 INR" numberUnit="per PC."></ObjectListItem>
+                    <FeedListItem senderPress="onSender" sender="Joe Biden" icon="https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Joe_Biden_presidential_portrait.jpg/1200px-Joe_Biden_presidential_portrait.jpg" 
+                                  text="Hey Anubhav! how are you?" timestamp="Feb 11th 2022"></FeedListItem>
+                    <ActionListItem text="Order Now!!"></ActionListItem>                                   -->
+                </items>
+            </List>
+        </content>
+        <!-- <Button text="Go To Next" press="onNext"></Button> -->
+        <footer>
+            <Toolbar>
+                <ToolbarSpacer />
+                <Button text="Add" icon="sap-icon://add" press="onAdd"></Button>
+            </Toolbar>
+        </footer>
+    </Page>
+</mvc:View>

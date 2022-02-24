@@ -1,0 +1,95 @@
+{
+    "sap.app":{
+        "id": "nvidia.sd.sales",
+        "type": "application",
+        "i18n": "i18n/i18n.properties",
+        "title": "{{appTitle}}",
+        "subTitle": "{{appSubTitle}}",
+        "tags":["fiori","fruits"],
+        "ach":"SAP-SD-SLS",
+        "dataSources": {
+            "anubhavService": {
+                "uri": "/sap/opu/odata/sap/ZNVID_XX_ODATA_SRV/",
+				"type": "OData",
+				"settings": {
+					"odataVersion": "2.0"
+				}
+            }
+        }
+    },
+    "sap.ui":{
+        "technology":"UI5",
+        "deviceTypes": ["desktop","tablet","phone"]
+    },
+    "sap.ui5":{
+        "dependencies":{
+            "minUI5Version": "1.90",
+            "libs" :{
+                "sap.m": {},
+                "sap.ui.layout": {}
+            }
+        },
+        "models":{
+            "":{
+                "type": "sap.ui.model.odata.v2.ODataModel",
+                "dataSource": "anubhavService"
+            },
+            "fruits":{
+                "type": "sap.ui.model.json.JSONModel",
+                "uri": "model/mockdata/fruits.json"
+            },
+            "i18n": {
+                "type": "sap.ui.model.resource.ResourceModel",
+                "uri": "i18n/i18n.properties"
+            }
+        },
+        "rootView":{
+            "viewName": "nvidia.sd.sales.view.App",
+            "type":"XML",
+            "id": "idAppView"
+        },
+        "routing":{
+            "config": {
+                "routerClass": "sap.m.routing.Router",
+                "viewType": "XML",
+                "path": "nvidia.sd.sales.view",
+                "controlId": "appCon"
+            },
+            "routes": [{
+                "name": "home",
+                "pattern": "",
+                "target": ["narendra", "putin"]
+            },{
+                "name": "detail",
+                "pattern": "fruits/{jack}",
+                "target": ["narendra", "modi"]
+            },{
+                "name": "add",
+                "pattern": "addNewProduct",
+                "target": ["narendra", "biden"]
+            }],
+            "targets": {
+                "narendra": {
+                    "viewName": "View1",
+                    "controlAggregation": "masterPages",
+                    "viewId": "idView1"
+                },
+                "modi":{
+                    "viewName": "View2",
+                    "controlAggregation": "detailPages",
+                    "viewId": "idView2"
+                },
+                "putin":{
+                    "viewName": "Empty",
+                    "controlAggregation": "detailPages",
+                    "viewId": "idEmpty"
+                },
+                "biden":{
+                    "viewName": "Add",
+                    "controlAggregation": "detailPages",
+                    "viewId": "idAdd"
+                }
+            }
+        }
+    }
+}

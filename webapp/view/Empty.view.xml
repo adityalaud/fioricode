@@ -1,0 +1,6 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="nvidia.sd.sales.controller.Empty">
+    <!-- <App id="appCon"></App> -->
+    <Page>
+        <Image width="100%" height="100%" src="https://i.pinimg.com/originals/c4/93/e8/c493e8b8ff03fa6448f20831b766526a.jpg"></Image>
+    </Page>
+</mvc:View>

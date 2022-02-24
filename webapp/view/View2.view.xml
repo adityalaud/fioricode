@@ -1,0 +1,31 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:f="sap.ui.layout.form" 
+		  xmlns:core="sap.ui.core"
+          controllerName="nvidia.sd.sales.controller.View2">
+    <Page title="{i18n>view2Title}" showNavButton="true" navButtonPress="onBack">
+        <!-- <Button text="Go Back" press="onBack"></Button> -->
+		<ObjectHeader intro="{DESCRIPTION}" title="{PRODUCT_ID} {NAME}" number="{PRICE}" numberUnit="{CURRENCY_CODE}" icon="sap-icon://product"></ObjectHeader>
+		<IconTabBar>
+			<items>
+				<IconTabFilter text="More Info" icon="sap-icon://information">
+					<core:Fragment fragmentName="nvidia.sd.sales.fragments.moreInfo" type="XML"></core:Fragment>
+				</IconTabFilter>
+				<IconTabFilter text="Suppliers" icon="sap-icon://supplier">
+					<core:Fragment fragmentName="nvidia.sd.sales.fragments.supplierTab" type="XML"></core:Fragment>
+				</IconTabFilter>
+				<IconTabFilter text="Cities" icon="sap-icon://home">
+					<core:Fragment fragmentName="nvidia.sd.sales.fragments.moreInfo" type="XML"></core:Fragment>
+					<core:Fragment fragmentName="nvidia.sd.sales.fragments.cities" type="XML"></core:Fragment>
+				</IconTabFilter>
+			</items>
+		</IconTabBar>
+        <footer>
+			<OverflowToolbar>
+				<ToolbarSpacer/>
+				<Button text="Accept" press="confirmOrder" type="Accept" />
+				<Button text="Reject" type="Reject" />
+				<Button text="Edit" />
+				<Button text="Delete" />
+			</OverflowToolbar>
+		</footer>
+    </Page>
+</mvc:View>
